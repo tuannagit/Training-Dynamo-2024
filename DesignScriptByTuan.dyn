@@ -2,7 +2,7 @@
   "Uuid": "6d864acd-917a-45b6-80d0-69f513ad871b",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Design script by Tuan",
+  "Name": "DesignScriptByTuan",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -12,7 +12,7 @@
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "f = open(r\"C:\\Users\\USER\\BIM\\Training-Dynamo-2024\\DesignScript.py\", \"r\")\r\nOUT = f.read()",
+      "Code": "f = open(r\"C:\\Users\\USER\\BIM\\Training-Dynamo-2024\\DesignScriptByTuan.py\", \"r\")\r\nOUT = f.read()",
       "Engine": "CPython3",
       "EngineName": "CPython3",
       "VariableInputPorts": true,
@@ -174,7 +174,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 702.83947226527266,
+        "X": 703.8929815101817,
         "Y": 404.80263867363669
       },
       {
@@ -184,7 +184,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 937.88841098733019,
+        "X": 938.94192023223923,
         "Y": 403.04733228392342
       },
       {
@@ -194,7 +194,7 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 461.292797192962,
+        "X": 462.346306437871,
         "Y": 288.64552739548424
       }
     ],
@@ -212,7 +212,7 @@
           "249c4826839541a887178b1bd8b8bb08"
         ],
         "HasNestedGroups": false,
-        "Left": 451.292797192962,
+        "Left": 452.346306437871,
         "Top": 215.64552739548424,
         "Width": 763.59561379436821,
         "Height": 349.40180488843919,
