@@ -1,1 +1,1 @@
-OUT = 10 + 5
+OUT = "Hello Tuan"
