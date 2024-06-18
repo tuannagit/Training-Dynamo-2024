@@ -1,0 +1,397 @@
+{
+  "Uuid": "d943cc3a-ccf4-4b70-9c6b-8e32ae43742a",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Lession04_Tuan",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-5..20;",
+      "Id": "9bd796d211394efd8257c0be43d41b80",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ce21db27385d4701bfce5eb66867ef62",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Point.ByCoordinates(x,y,z);",
+      "Id": "5badb0c3fca045d684c3e14a9ef48349",
+      "Inputs": [
+        {
+          "Id": "05202fe87448404fb7e395d473bebba7",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b7db1c6eeac444c7a4b38448b5988cc5",
+          "Name": "y",
+          "Description": "y",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c60c568c81943c582428a9a03952500",
+          "Name": "z",
+          "Description": "z",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8eaa1d31ec914d398d347ee50a87816c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-5..100..5;",
+      "Id": "0d83b16ca54f4d1d89599ae872ac74ec",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fbf9a9097ed54d369ce0743dced7dcb7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "-10..60..3;",
+      "Id": "6c91d2859041448fab13e7d38444a366",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cca1bac4a38c4cd2b799a2e9d9ed1633",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef getPointsByEvenX(element):\r\n    points = [point for point in element if point.X %2 == 0 and point.X > 0]\r\n    return points\r\n    \r\n# Input points\r\ninput = IN[0]\r\n\r\n# Output points\r\nOUT = getPointsByEvenX(input)\r\n",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "5c7b690dc9f6448c9506680805e00801",
+      "Inputs": [
+        {
+          "Id": "10c71b5be1f54f358814bf6d0b8f0199",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d0e2257c6b7d4b8097ecc8c6db1c5479",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fe58e4e41f80459cbbac426b2c6f0c18",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef getPointsByOddY(element):\r\n    points = [point for point in element if point.Y %2 == 1 and point.Y > 0]\r\n    return points\r\n    \r\n# Input points\r\ninput = IN[0]\r\n\r\n# Output points\r\nOUT = getPointsByOddY(input)\r\n",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "c6d69cd731b141a6b6a80bf471708ce7",
+      "Inputs": [
+        {
+          "Id": "c1a093581791425389daf94cd9e00936",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "64b7beb913df4647869acd2e4d4a2bb7",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\ndef getPointsWithConditions(element):\r\n    points = [point for point in element if point.Z %5 == 0 and point.Y > 0]\r\n    return points\r\n    \r\n# Input points\r\ninput = IN[0]\r\n\r\n# Output points\r\nOUT = getPointsWithConditions(input)\r\n",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "4c42e9720b354b448db86676cbbb7ebb",
+      "Inputs": [
+        {
+          "Id": "a5f02887b73e4baabe309b72d45709fa",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f1179f2fa8bc42b89953d66df4644d13",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ce21db27385d4701bfce5eb66867ef62",
+      "End": "05202fe87448404fb7e395d473bebba7",
+      "Id": "ff6844db0b4e4be093ffc4db23fd860c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8eaa1d31ec914d398d347ee50a87816c",
+      "End": "10c71b5be1f54f358814bf6d0b8f0199",
+      "Id": "620c54a51d54466f94d1f43de292421b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8eaa1d31ec914d398d347ee50a87816c",
+      "End": "c1a093581791425389daf94cd9e00936",
+      "Id": "08c39d0bbfe1478ba409bd792088b135",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8eaa1d31ec914d398d347ee50a87816c",
+      "End": "a5f02887b73e4baabe309b72d45709fa",
+      "Id": "d6fed6d407cd4272aa00587142412c1a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fbf9a9097ed54d369ce0743dced7dcb7",
+      "End": "b7db1c6eeac444c7a4b38448b5988cc5",
+      "Id": "2548957e8a3f4c51b60c463b9dffe498",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cca1bac4a38c4cd2b799a2e9d9ed1633",
+      "End": "7c60c568c81943c582428a9a03952500",
+      "Id": "a198684da22d40cabce746751291ae15",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.17",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "4.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.17.0.3472",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -21.689365386962891,
+      "EyeY": 29.080141067504883,
+      "EyeZ": 72.6652603149414,
+      "LookX": 16.689365386962891,
+      "LookY": -18.080141067504883,
+      "LookZ": -80.6652603149414,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "9bd796d211394efd8257c0be43d41b80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 174.0,
+        "Y": 222.0
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "5badb0c3fca045d684c3e14a9ef48349",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 461.81416509787346,
+        "Y": 279.25666039149382
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "0d83b16ca54f4d1d89599ae872ac74ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 175.0,
+        "Y": 350.0
+      },
+      {
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Id": "6c91d2859041448fab13e7d38444a366",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 178.0,
+        "Y": 483.0
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "5c7b690dc9f6448c9506680805e00801",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1134.996318142053,
+        "Y": 194.23478302852055
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "c6d69cd731b141a6b6a80bf471708ce7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1168.5686239648612,
+        "Y": 725.69918465875094
+      },
+      {
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Id": "4c42e9720b354b448db86676cbbb7ebb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1177.4449940422071,
+        "Y": 1195.2498522050037
+      }
+    ],
+    "Annotations": [],
+    "X": 175.37796257802665,
+    "Y": 36.880809967600641,
+    "Zoom": 0.40355682489809741
+  }
+}
